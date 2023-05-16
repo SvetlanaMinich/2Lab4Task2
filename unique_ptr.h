@@ -11,6 +11,7 @@ public:
     unique_ptr(unique_ptr&& _ptr): ptr(_ptr.ptr){
         _ptr.ptr = nullptr;
     }
+    unique_ptr(int n) : ptr(new char[n]){}
     unique_ptr& operator=(unique_ptr&& _ptr){
         this->ptr = _ptr.ptr;
         _ptr.ptr = nullptr;
